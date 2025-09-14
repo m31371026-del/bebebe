@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(to top, #ffe6f0, #ffcce0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  overflow: hidden;
+}
+
+h1, h2 {
+  color: #ff3399;
+  text-shadow: 2px 2px white;
+  text-align: center;
+}
+
+.btn {
+  padding: 12px 24px;
+  margin: 10px;
+  font-size: 1.2em;
+  background: #ff66a3;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  background: #ff3385;
+}
+
+#question, #loveText {
+  display: none;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ff3366;
+  transform: rotate(45deg);
+  animation: floatUp 5s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ff3366;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Кнопка "Нет" избегает курсора */
+#noBtn {
+  transition: left 0.3s ease, top 0.3s ease;
+}
